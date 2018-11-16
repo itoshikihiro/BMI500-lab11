@@ -1,0 +1,13 @@
+In this program,
+
+First, I use TotalDiag to transform data from dx0 to dx24 to percentage. The calculate is like dx0/TotalDiag * 100;
+
+Second, I put one-to-many entries into groups in I10-I9 mapping file. Each group shares one common I10 name, and multiple I9 names. 
+
+Then, I find out the max percentage in each row storing in "max_percentage" and creat another column "max_single_diagonsis" to store the value calcuated by "max_percentage" * "max_single_diagonsis" in each group. 
+
+Consider there are some one-to-many mappings does not have frequency data. In this situation, the program randomly choose one of I9 names for that particular I10 name. 
+
+Finally, the program finds out the maximum of "max_single_diagonsis" in each group. The I9 name of the maximum would be the exact mapping name of that group's I10 name. 
+
+One cosideration is that "TotalDiag" does not represent a single diagonsis's popularity. If a person had some I10 diease, the most curable way is to find max_single_diagnosis in I9. 
